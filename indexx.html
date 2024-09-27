@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    
+    <div id="login-section">
+        <div class="login-container">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Login</button>
+                <div id="loginError" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard-section" style="display: none;">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <button id="logoutBtn">Logout</button>
+        </header>
+        <div class="dashboard-content">
+            <section>
+                <h2>Total Users: <span id="totalUsers">0</span></h2>
+                <h2>Total Payments Due: <span id="totalPayments">0</span></h2>
+            </section>
+
+            <div id="user-management">
+                <h2>User Management</h2>
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Balance</th>
+                            <th>Payment Due</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <h3>Add User</h3>
+                <form id="addUserForm">
+                    <input type="text" id="addUsername" placeholder="Username" required>
+                    <input type="number" id="addBalance" placeholder="Balance" required>
+                    <input type="number" id="addPaymentDue" placeholder="Payment Due" required>
+                    <button type="submit">Add User</button>
+                </form>
+                <div id="addUserMessage"></div>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <script src="app.js"></script>
+    <script src="server.js"></script>
+    <script src="users.json"></script>
+</body>
+</html>
